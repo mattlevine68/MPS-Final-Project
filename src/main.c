@@ -3,5 +3,9 @@
 int main(void){
 	Sys_Init();
 
-	// Read the README in the base directory of this project.
+	// Add Handles for DCMI, DCMI DMA, I2C, Uart, Uart DMA, DMA2
+
+	//Intialize Everything
+
+	//Read GPIO Pin if variable = 1 take the picture and transmit 
 }
