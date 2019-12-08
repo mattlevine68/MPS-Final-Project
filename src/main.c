@@ -12,13 +12,13 @@ void I2C1_Init(void);
 //Member Varibales
 GPIO_InitTypeDef GPIO_InitStruct;
 UART_HandleTypeDef huart3;
-DCMI_HandleTypeDef hdcmi;
-I2C_HandleTypeDef hi2c1;
+//DCMI_HandleTypeDef hdcmi;
+//I2C_HandleTypeDef hi2c1;
 
 
 int main(void){
 	Sys_Init();
-	DCMI_Init();
+	//DCMI_Init();
 	//initUart(&huart3, 115200,  USART3);
 
 	// Add Handles for DCMI, DCMI DMA, I2C, Uart, Uart DMA, DMA2
@@ -62,7 +62,7 @@ void ov5647_Snapshot(void){
 	printf("We gottem\r\n"); // test for just pir sensor
 }
 
-void DCMI_Init(void){
+/*void DCMI_Init(void){
 	//need to add msp init
 	hdcmi.Instance =DCMI;
 	hdcmi.Init.PCKPolarity = DCMI_PCKPOLARITY_RISING;
@@ -91,3 +91,4 @@ void I2C1_Init(void){
 	hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
 	hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
 }
+*/
