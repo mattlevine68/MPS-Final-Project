@@ -30,35 +30,36 @@ int main(void){
 	//PIR Sensor Part
 
 	GPIO_Setup();
+	printf("\033[2J\033[;H"); // Erase screen & move cursor to home position
+	fflush(stdout); // Need to flush stdout after usSing printf that doesn't end in \n
 	while(1){
-		GPIO_PinState PIR = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_0); //Constant checking
+		GPIO_PinState PIR = HAL_GPIO_ReadPin(GPIOJ, GPIO_PIN_1); //Constant checking
 		if(PIR == 1) ov5647_Snapshot();
 	}
 
 }
 
 
-
 void GPIO_Setup(void){
 	//Input GPIO for values
-	//__HAL_RCC_GPIOJ_CLK_ENABLE();
+	__HAL_RCC_GPIOJ_CLK_ENABLE();
 	//__HAL_RCC_GPIOA_CLK_ENABLE();
-	__HAL_RCC_GPIOD_CLK_ENABLE();
+	//__HAL_RCC_GPIOD_CLK_ENABLE();
 	//__HAL_RCC_GPIOF_CLK_ENABLE();
 	//__HAL_RCC_GPIOC_CLK_ENABLE();
 
 	//J0
-	GPIO_InitStruct.Pin = GPIO_PIN_0;
+	GPIO_InitStruct.Pin = GPIO_PIN_1;
 	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-	GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
-	HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+	HAL_GPIO_Init(GPIOJ, &GPIO_InitStruct);
 
 }
 
 void ov5647_Snapshot(void){
 	//Calls all the camera stuff
-	printf("We gottem"); // test for just pir sensor
+	printf("We gottem\r\n"); // test for just pir sensor
 }
 
 void DCMI_Init(void){
