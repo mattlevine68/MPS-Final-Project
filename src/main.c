@@ -7,8 +7,8 @@
 //Member Functions
 void GPIO_Setup(void);
 void ov5647_Snapshot(void); //Might not be void if needs to return value
-void DCMI_Init(void);
-void I2C1_Init(void);
+//void DCMI_Init(void);
+//void I2C1_Init(void);
 //Member Varibales
 GPIO_InitTypeDef GPIO_InitStruct;
 UART_HandleTypeDef huart3;
