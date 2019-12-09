@@ -25,7 +25,7 @@ int main(void){
 
 	//Intialize Everything
 
-	//Read GPIO Pin if variable = 1 take the picture and transmit
+	//Read GPIO Pin if variable = 1 take the picture and transmits
 
 	//PIR Sensor Part
 
