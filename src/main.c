@@ -12,6 +12,7 @@ void ov5647_Snapshot(void); //Might not be void if needs to return value
 //Member Varibales
 GPIO_InitTypeDef GPIO_InitStruct;
 UART_HandleTypeDef huart3;
+
 //DCMI_HandleTypeDef hdcmi;
 //I2C_HandleTypeDef hi2c1;
 
